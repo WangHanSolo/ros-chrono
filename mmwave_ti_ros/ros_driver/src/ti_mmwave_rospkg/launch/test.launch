@@ -1,0 +1,11 @@
+
+<launch>
+  <node name="usb_cam" pkg="usb_cam" type="usb_cam_node" output="screen" >
+    <param name="video_device" value="/dev/video2" /> <!--usb cam is vedio2, laptop default camera is vedio0-->
+    <param name="image_width" value="1080" />   <!--resolution has to be correct-->
+    <param name="image_height" value="1920" />  <!--my camera type is USBFHD08S, 1920*1080 or 1280*720 or 640*360, smaller resolution gains larger fps-->
+    <param name="pixel_format" value="yuyv" />  <!--my camera type is USBFHD08S which is mjpeg-->
+    <param name="camera_frame_id" value="usb_cam" />
+    <param name="io_method" value="mmap"/>
+  </node>
+</launch>
